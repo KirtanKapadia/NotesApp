@@ -5,15 +5,15 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
-    ir-eligibility="CLASS_ADDED"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.4.2"
-    timestamp="1565356810393"
+    timestamp="1565357673348"
     token="-7931487158210742496"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="636" />
+        duration="704" />
     <task
         name="instant-run-dex"
         duration="0" />
@@ -22,7 +22,7 @@
         duration="113" />
     <task
         name="verifier"
-        duration="12" />
+        duration="33" />
 
     <artifact
         location="D:\Android\NotesApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -74,8 +74,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1565356810393"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1565357673348"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\Android\NotesApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
