@@ -21,6 +21,7 @@ import static android.R.layout.simple_list_item_2;
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList<String> notes = new ArrayList<>();
+    static ArrayAdapter<String> arrayAdapter;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.addNote:
+                Intent intent = new Intent(getApplicationContext(), NoteEditorActivity.class);
+                startActivity(intent);
+
                 return true;
             case R.id.help:
                 new AlertDialog.Builder(this)
@@ -43,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         .setMessage("Long Press on a Note to delete them").show();
                 return true;
             default:
-                return true;
+                return false;
 
         }
     }
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         notes.add("Example Note");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, simple_list_item_1, notes);
+        arrayAdapter = new ArrayAdapter<>(this, simple_list_item_1, notes);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
