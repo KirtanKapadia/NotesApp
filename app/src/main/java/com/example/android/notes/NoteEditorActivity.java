@@ -19,6 +19,7 @@ public class NoteEditorActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.notesEditText);
 
         Intent intent = getIntent();
+
         noteId = intent.getIntExtra("noteId", -1);
 
         if(noteId != -1){
@@ -27,7 +28,7 @@ public class NoteEditorActivity extends AppCompatActivity {
             MainActivity.notes.add("");
             noteId = MainActivity.notes.size() - 1;
         }
-
+        editText.setSelection(editText.length());
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -36,7 +37,7 @@ public class NoteEditorActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                MainActivity.notes.set(noteId, String.valueOf(charSequence));
+                MainActivity.notes.set(noteId, String.valueOf(charSequence).trim());
                 MainActivity.arrayAdapter.notifyDataSetChanged();
             }
 
